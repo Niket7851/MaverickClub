@@ -1,0 +1,231 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #faebd7;
+  margin-top: 0px;
+}
+
+.pnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0);
+  color: #faebd7;
+  margin-top: 0px;
+}
+
+.logo {
+  margin-left: 30px;
+}
+
+.logo img {
+  width: 150px;
+  height: 40px;
+}
+
+.list {
+  margin-left: 30px;
+}
+
+.list ul {
+  display: flex;
+  gap: 15px;
+}
+
+.list ul li {
+  list-style: none;
+}
+
+.register {
+  margin-right: 30px;
+}
+
+.button {
+  height: 30px;
+  text-align: center;
+  background-color: antiquewhite;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+ul li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  font-family: "Lato";
+  color: #ecf0f1;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+ul li a::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: #ff7000;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+ul li a:hover {
+  color: #95a5a6;
+}
+
+ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .navBar,
+  .pnavbar {
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .logo img {
+    width: 100px;
+    height: auto;
+  }
+
+  .list {
+    display: none;
+  }
+
+  .register {
+    margin-right: 10px;
+  }
+  .list.open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70%;
+    background-color: black;
+    padding: 20px;
+    z-index: 1;
+  }
+  
+  .list {
+    display: none;
+  }
+  
+
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .menu-icon .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #ecf0f1;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .menu-icon:hover .bar {
+    background-color: #95a5a6;
+  }
+
+  .navBar.open .list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navBar.open .list ul li {
+    margin-bottom: 10px;
+  }
+
+  
+  .navBar.open .register {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .navBar.open .register .button {
+    width: 100%;
+  }
+
+
+.list ul {
+  flex-direction: column;
+  gap: 20px;
+}
+.list ul li {
+  margin-bottom: 0;
+}
+
+.register {
+  margin-top: 20px;
+}
+
+.register .button {
+  width: 100%;
+  font-size: 14px;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-icon .bar {
+  width: 100%;
+  height: 2px;
+  background-color: #ecf0f1;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu-icon:hover .bar {
+  background-color: #95a5a6;
+}
+
+.navBar.open .menu-icon {
+  margin-left: 20px;
+}
+
+.navBar.open .list.open {
+  display: block;
+}
+
+}
